@@ -1,9 +1,9 @@
 
 const stopWatchView = document.querySelector('#stop-watch-view');
 
-let hundreth = 44;
-let seconds = 34;
-let minutes = 12;
+let hundreth = 0;
+let seconds = 0;
+let minutes = 0;
 
 function displayTime() {
     // stopWatchView.innerHTML = minutes + ':' + seconds + ':' + hundreth;
@@ -12,4 +12,18 @@ function displayTime() {
 }
 
 
-displayTime();
+function handleTimeChange() {
+    hundreth++;
+    if (hundreth > 99) {
+        hundreth = 0;
+        seconds++;
+        if (seconds > 59) {
+            seconds = 0;
+            minutes++;
+        }
+    }
+    displayTime();
+
+}
+
+setInterval(handleTimeChange, 10);
