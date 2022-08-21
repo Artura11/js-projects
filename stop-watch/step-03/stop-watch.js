@@ -6,9 +6,17 @@ let seconds = 0;
 let minutes = 0;
 
 function displayTime() {
+    let secondsString = seconds;
+    if (seconds < 10) {
+        secondsString = '0' + seconds;
+    }
+    let minutesString = minutes;
+    if (minutes < 10) {
+        minutesString = '0' + minutes;
+    }
     // stopWatchView.innerHTML = minutes + ':' + seconds + ':' + hundreth;
 
-    stopWatchView.innerHTML = `${minutes}:${seconds}:${hundreth}`;
+    stopWatchView.innerHTML = `${minutesString}:${secondsString}:${hundreth}`;
 }
 
 

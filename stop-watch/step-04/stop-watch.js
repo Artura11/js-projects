@@ -26,4 +26,9 @@ function handleTimeChange() {
 
 }
 
-setInterval(handleTimeChange, 10);
+
+function toggleStopWatch() {
+    setInterval(handleTimeChange, 10);
+}
+
+document.querySelector('#toggle-stop-watch').addEventListener('click', startStopWatch);
