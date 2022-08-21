@@ -1,7 +1,8 @@
 
 const stopWatchView = document.querySelector('#stop-watch-view');
 const toggleStopWatchButton = document
-    .querySelector('#toggle-stop-watch').addEventListener('click', toggleStopWatch);
+    .querySelector('#toggle-stop-watch');
+toggleStopWatchButton.addEventListener('click', toggleStopWatch);
 
 let hundreth = 0;
 let seconds = 0;
