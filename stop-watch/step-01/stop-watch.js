@@ -15,3 +15,14 @@ console.log(allParagraph);
 console.log('p1', allParagraph[1]);
 
 console.log('p2', allParagraph[2]);
+
+const allListItems = document.querySelectorAll('.list-item');
+console.log(allListItems);
+
+let counter = 1;
+allListItems.forEach(function (listItem) {
+    console.log('list item', listItem);
+    listItem.innerHTML = counter++;
+
+
+});
