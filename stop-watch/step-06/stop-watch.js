@@ -5,22 +5,32 @@ toggleStopWatchButton.addEventListener('click', toggleStopWatch);
 const resetButton = document.querySelector('#reset-stop-watch');
 resetButton.addEventListener('click', resetStopWatch);
 
+const lapsButton = document.querySelector('#stop-watch-laps');
+lapsButton.addEventListener('click', addLap);
+
+const lapsView = document.querySelector('#laps-view');
+
 let hundredth = 0;
 let seconds = 0;
 let minutes = 0;
 
-function displayTime() {
+function getTimeString() {
   let secondsString = seconds;
   if (seconds < 10) {
     secondsString = '0' + seconds;
   }
-  let minutesString = minutes;
-  if (minutes < 10) {
-    minutesString = '0' + minutes;
-  }
-  // stopWatchView.innerHTML = minutes + ':' + seconds + ':' + hundreth;
+  //TODO  do the same to the minutes
+  const timeString = `${minutes}:${secondsString}:${hundredth}`;
 
-  stopWatchView.innerHTML = `${minutesString}:${secondsString}:${hundreth}`;
+  return timeString;
+}
+
+function displayTime() {
+  stopWatchView.innerHTML = getTimeString();
+}
+
+function addLap() {
+  lapsView.innerHTML += `<li>${getTimeString()}</li>`;
 }
 
 function resetStopWatch() {
